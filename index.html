@@ -1,214 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pendaftaran Mahasiswa Baru - USTB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pendaftaran Mahasiswa Baru - USTB</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <style>
-    body {
-      background-color: #e9fdf2;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    <style>
+        body {
+            background-color: #e9fdf2;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    .full-banner {
-      width: 100%;
-      max-height: 450px;
-      object-fit: contain;
-      object-position: center;
-      background-color: #e9fdf2;
-      display: block;
-      margin-bottom: 30px;
-    }
+        .full-banner {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            object-position: center;
+            background-color: #e9fdf2;
+            display: block;
+            margin-bottom: 30px;
+        }
 
-    .form-container {
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 40px;
-      margin: 0 auto 50px;
-      max-width: 900px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 0 auto 50px;
+            max-width: 900px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.7s ease-in-out;
+        }
 
-    .form-title {
-      font-weight: bold;
-      font-size: 30px;
-      text-align: center;
-      color: #14532d;
-      margin-bottom: 30px;
-    }
 
-    label {
-      font-weight: 500;
-    }
+        .form-title {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            color: #14532d;
+            margin-bottom: 30px;
+        }
 
-    .btn-success {
-      background-color: #14532d;
-      border: none;
-    }
+        label {
+            font-weight: 500;
+        }
 
-    .btn-success:hover {
-      background-color: #1b783d;
-    }
+        .btn-success {
+            background-color: #14532d;
+            border: none;
+        }
 
-    .btn-secondary:hover {
-      background-color: #c4c4c4;
-    }
+        .btn-success:hover {
+            background-color: #1b783d;
+        }
 
-    footer {
-      background-color: #14532d;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 14px;
-    }
+        .btn-secondary:hover {
+            background-color: #c4c4c4;
+        }
 
-    footer a {
-      color: #caffbf;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        footer {
+            background-color: #14532d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
+        footer a {
+            color: #f8f8f8;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <img src="https://i.pinimg.com/736x/b7/30/c0/b730c08592a70f53d8f4f238da707f96.jpg" alt="Kampus Universitas Satya Terra Bhinneka" class="full-banner">
+    <img src="https://i.pinimg.com/736x/b7/30/c0/b730c08592a70f53d8f4f238da707f96.jpg" alt="Kampus Universitas Satya Terra Bhinneka" class="full-banner">
 
-  <main class="container text-center">
+    <main class="container text-start">
+        <form class="form-container" id="formPendaftaran">
 
-    <form class="form-container" id="formPendaftaran">
-      <h2 class="form-title"><i class="fa-solid fa-user-graduate me-2"></i>
-        Formulir Pendaftaran Mahasiswa Baru<br>Universitas Satya Terra Bhinneka</h2>
+            <h2 class="form-title"><i class="fas fa-user-graduate"></i>
+                Formulir Pendaftaran Mahasiswa Baru<br>Universitas Satya Terra Bhinneka</h2>
 
-      <div class="row text-start">
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-user me-1"></i> Nama Lengkap</label>
-          <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required>
+            <!-- A. Data Pribadi -->
+            <h5>A. Data Pribadi</h5>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Nama Lengkap</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Nomor WhatsApp / Telepon</label>
+                    <input type="tel" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Usia</label>
+                    <input type="number" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Jenis Kelamin</label><br>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="gender" class="form-check-input" required>
+                        <label class="form-check-label">Laki-laki</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="gender" class="form-check-input" required>
+                        <label class="form-check-label">Perempuan</label>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Domisili</label>
+                    <select class="form-select" required>
+                        <option selected disabled>Pilih domisili</option>
+                        <option>Kota Medan</option>
+                        <option>Binjai</option>
+                        <option>Deli Serdang</option>
+                        <option>Serdang Berdagai</option>
+                        <option>Tebing Tinggi</option>
+                        <option>Lainnya</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- B. Pendidikan / Pekerjaan -->
+            <h5 class="mt-4">B. Data Pendidikan / Pekerjaan</h5>
+            <div class="mb-3">
+                <label>Status</label>
+                <select class="form-select" required>
+                    <option selected disabled>Pilih status</option>
+                    <option>Pelajar</option>
+                    <option>Mahasiswa</option>
+                    <option>Karyawan</option>
+                    <option>Wirausaha</option>
+                    <option>Lainnya</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Nama Institusi / Perusahaan</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-4">
+                <label>Bidang Minat</label><br>
+                <div class="form-check"><input type="checkbox" class="form-check-input" id="minat1"><label
+                        class="form-check-label" for="minat1">Financial</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input" id="minat2"><label
+                        class="form-check-label" for="minat2">Digital Marketing</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input" id="minat3"><label
+                        class="form-check-label" for="minat3">E-Commerce</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input" id="minat4"><label
+                        class="form-check-label" for="minat4">UI/UX Design</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input" id="minat5"><label
+                        class="form-check-label" for="minat5">Startup</label></div>
+            </div>
+
+            <!-- C. Pertanyaan Bisnis Digital -->
+            <h5>C. Pertanyaan Pemahaman Bisnis Digital</h5>
+            <div class="mb-3">
+                <label>Seberapa familiar Anda dengan bisnis digital?</label><br>
+                <div class="form-check form-check-inline"><input type="radio" name="skala"
+                        class="form-check-input"><label class="form-check-label">1</label></div>
+                <div class="form-check form-check-inline"><input type="radio" name="skala"
+                        class="form-check-input"><label class="form-check-label">2</label></div>
+                <div class="form-check form-check-inline"><input type="radio" name="skala"
+                        class="form-check-input"><label class="form-check-label">3</label></div>
+                <div class="form-check form-check-inline"><input type="radio" name="skala"
+                        class="form-check-input"><label class="form-check-label">4</label></div>
+                <div class="form-check form-check-inline"><input type="radio" name="skala"
+                        class="form-check-input"><label class="form-check-label">5</label></div>
+            </div>
+            <div class="mb-3">
+                <label>Apa tantangan terbesar yang Anda hadapi di dunia digital?</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="mb-4">
+                <label>Darimana Anda mengetahui seminar ini?</label><br>
+                <div class="form-check"><input type="checkbox" class="form-check-input"><label
+                        class="form-check-label">Instagram</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input"><label
+                        class="form-check-label">WhatsApp</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input"><label
+                        class="form-check-label">Facebook</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input"><label
+                        class="form-check-label">Teman</label></div>
+                <div class="form-check"><input type="checkbox" class="form-check-input"><label
+                        class="form-check-label">Website</label></div>
+            </div>
+
+            <!-- D. Konfirmasi -->
+            <h5>D. Konfirmasi Pendaftaran</h5>
+            <div class="mb-3">
+                <label>Kode Referral (jika ada)</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-check mb-4">
+                <input type="checkbox" class="form-check-input" required>
+                <label class="form-check-label">Saya setuju dengan Syarat &amp; Ketentuan</label>
+            </div>
+
+            <!-- E. Dokumen Pendukung -->
+            <h5>E. Dokumen Pendukung</h5>
+            <div class="mb-3">
+                <label for="foto">Foto 3x4 (Max 2MB - JPG/PNG)</label>
+                <input type="file" class="form-control" id="foto" accept=".jpg,.jpeg,.png" required>
+            </div>
+            <div class="mb-3">
+                <label for="ijazah">Scan Ijazah (PDF)</label>
+                <input type="file" class="form-control" id="ijazah" accept=".pdf" required>
+            </div>
+            <div class="mb-3">
+                <label for="ktp">Scan KTP (PDF/JPEG)</label>
+                <input type="file" class="form-control" id="ktp" accept=".pdf,.jpg,.jpeg" required>
+            </div>
+            <div class="form-check mb-4">
+                <input type="checkbox" class="form-check-input" id="setujuData" required>
+                <label class="form-check-label" for="setujuData">☑ Ya, saya bertanggung jawab atas data ini</label>
+            </div>
+
+            <!-- Tombol -->
+            <div class="row mt-4">
+                <div class="col-md-12 d-grid">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>
+                        Kirim</button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Universitas Satya Terra Bhinneka<br>
+                Dibuat oleh <a href="https://www.instagram.com/slawa__1" target="_blank">Susilawati</a>
+            </p>
         </div>
+    </footer>
 
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-id-card me-1"></i> NIK</label>
-          <input type="text" class="form-control" placeholder="Nomor Induk Kependudukan" required>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-venus-mars me-1"></i> Jenis Kelamin</label>
-          <select class="form-select" required>
-            <option value="" disabled selected>Pilih jenis kelamin</option>
-            <option>Laki-laki</option>
-            <option>Perempuan</option>
-          </select>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-calendar-day me-1"></i> Tanggal Lahir</label>
-          <input type="date" class="form-control" required>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-envelope me-1"></i> Email</label>
-          <input type="email" class="form-control" placeholder="Email aktif" required>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-phone me-1"></i> No Handphone</label>
-          <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required>
-        </div>
-
-        <div class="col-md-12 mb-3">
-          <label><i class="fa-solid fa-location-dot me-1"></i> Alamat Lengkap</label>
-          <textarea class="form-control" rows="3" placeholder="Masukkan alamat tempat tinggal" required></textarea>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-book-open me-1"></i> Program Studi Pilihan</label>
-          <select class="form-select" required>
-            <option value="" disabled selected>Pilih program studi</option>
-            <option>Bisnis Digital</option>
-            <option>Informatika</option>
-            <option>Kewirausahan</option>
-            <option>Agribisnis</option>
-            <option>Manajemen Hutan</option>
-            <option>Kebidanan</option>
-          </select>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label><i class="fa-solid fa-calendar-check me-1"></i> Tahun Ajaran</label>
-          <input type="text" class="form-control" id="tahunAjaran" readonly required>
-        </div>
-
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="setuju" required>
-          <label class="form-check-label" for="setuju">
-            Saya menyatakan bahwa data yang saya isikan adalah benar dan dapat dipertanggungjawabkan.
-          </label>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col-md-6 d-grid">
-            <button type="submit" class="btn btn-success"><i class="fa-solid fa-paper-plane me-1"></i> Kirim
-              Pendaftaran</button>
-          </div>
-          <div class="col-md-6 d-grid">
-            <button type="reset" class="btn btn-secondary"><i class="fa-solid fa-eraser me-1"></i> Reset Form</button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Universitas Satya Terra Bhinneka<br>
-        Dibuat oleh <a href="https://www.instagram.com/slawa__1?igsh=MWZ2bnBkeHZ5OTY2bg=="
-          target="_blank">Susilawati</a>
-      </p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    document.getElementById('formPendaftaran').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const check = document.getElementById('setuju');
-      if (!check.checked) {
-        alert('Silakan centang pernyataan persetujuan terlebih dahulu.');
-        return;
-      }
-
-      alert('Pendaftaran berhasil! Terima kasih telah mendaftar di USTB.');
-      this.reset();
-
-      const tahunSekarang = new Date().getFullYear();
-      document.getElementById('tahunAjaran').value = `${tahunSekarang}/${tahunSekarang + 1}`;
-    });
-
-    const tahunSekarang = new Date().getFullYear();
-    document.getElementById('tahunAjaran').value = `${tahunSekarang}/${tahunSekarang + 1}`;
-  </script>
+    <script>
+        document.getElementById('formPendaftaran').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Pendaftaran berhasil dikirim!');
+            this.reset();
+        });
+    </script>
 
 </body>
 
 </html>
-
